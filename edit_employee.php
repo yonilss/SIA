@@ -46,8 +46,7 @@ if (isset($_POST['update'])) {
         // Check if the query was successful
         if ($result) {
             // Display success message
-            echo "<p><font color='green'>Data updated successfully!</font></p>";
-            echo "<a href='index.php'>View Result</a>";
+            header('Location: homepage.php'); // Redirect after deletion
         } else {
             echo "<p><font color='red'>Error updating data: " . mysqli_error($mysqli) . "</font></p>";
         }

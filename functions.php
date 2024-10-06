@@ -49,31 +49,41 @@ function login($conn){
 
 function addEmployee($conn){
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $employee_id = $_POST['employee_id'];
-        $first_name = $_POST['first_name'];
-        $last_name = $_POST['last_name'];
-        $age = $_POST['age'];
-        $email = $_POST['email'];
-        $address = $_POST['address'];
-    
-        $conn = require_once "dbConnection.php";
-    
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-    
-        $sql = "INSERT INTO employee (Employee_ID, First_Name, Last_Name, Age, `E-mail`, Address) 
-                VALUES ('$employee_id', '$first_name', '$last_name', '$age', '$email', '$address')";
-    
-        if ($conn->query($sql) === TRUE) {
-            echo "New employee added successfully!";
-            header("Location: http://localhost/PHP/SIA/homepage.php");
-    
+        $employee_id = $_POST['Employee_ID'];
+    $first_name = $_POST['First_Name'];
+    $last_name = $_POST['Last_Name'];
+    $age = $_POST['Age'];
+    $email = $_POST['E-mail'];
+    $address = $_POST['Address'];
+
+    // Handle image upload
+    $target_dir = "img/"; // Directory to store images
+    $image_file = $target_dir . basename($_FILES["employee_img"]["name"]); // Image file path
+
+    // Check if the file is an actual image or fake image
+    $check = getimagesize($_FILES["employee_img"]["tmp_name"]);
+    if ($check !== false) {
+        // Upload the file
+        if (move_uploaded_file($_FILES["employee_img"]["tmp_name"], $image_file)) {
+            // Insert employee data along with image file name into the database
+            $query = "INSERT INTO employee (Employee_ID, First_Name, Last_Name, Age, `E-mail`, Address, Image) 
+                      VALUES ('$employee_id', '$first_name', '$last_name', '$age', '$email', '$address', '".basename($_FILES["employee_img"]["name"])."')";
+
+            $result = mysqli_query($conn, $query);
+            if ($result) {
+                echo "Employee added successfully!";
+                header("Location: http://localhost/PHP/SIA/employee.php");
+
+            } else {
+                echo "Error: " . mysqli_error($conn);
+            }
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Sorry, there was an error uploading the image.";
         }
-    
-        $conn->close();
+    } else {
+        echo "File is not an image.";
+    }
+
     }
 }
 
@@ -132,7 +142,7 @@ function delEmployee($conn){
     $result = mysqli_query($conn, "DELETE FROM employee WHERE id = $id");
 
     if ($result) {
-    header("Location: http://localhost/PHP/SIA/homepage.php");
+    header("Location: http://localhost/PHP/SIA/employee.php");
     exit();
         } else {
     echo "Error: " . mysqli_error($conn);

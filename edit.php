@@ -39,7 +39,7 @@ if ($id > 0) {
 <body>
     <h2>Edit Data</h2>
     <p>
-        <a href="index.php">Home</a>
+        <a href="employee.php">Go Back</a>
     </p>
     <form name="edit" method="post" action="edit_employee.php">
         <table border="0">

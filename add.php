@@ -25,26 +25,32 @@ addEmployee($conn);
     <h1>Add New Employee</h1>
     
     <!-- Form submission will post back to add.php -->
-    <form action="add.php" method="POST">
-        <label for="employee_id">Employee ID:</label>
-        <input type="number" id="employee_id" name="employee_id" required><br><br>
+    <form action="add.php" method="post" enctype="multipart/form-data">
+    <label for="Employee_ID">Employee ID:</label>
+    <input type="text" name="Employee_ID" required><br>
 
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name" required><br><br>
+    <label for="First_Name">First Name:</label>
+    <input type="text" name="First_Name" required><br>
 
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name" required><br><br>
+    <label for="Last_Name">Last Name:</label>
+    <input type="text" name="Last_Name" required><br>
 
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" required><br><br>
+    <label for="Age">Age:</label>
+    <input type="number" name="Age" required><br>
 
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required><br><br>
+    <label for="E-mail">Email:</label>
+    <input type="email" name="E-mail" required><br>
 
-        <label for="address">Address:</label>
-        <textarea id="address" name="address" required></textarea><br><br>
+    <label for="Address">Address:</label>
+    <textarea name="Address" required></textarea><br>
 
-        <input type="submit" value="Add Employee">
+    <!-- File input for the image -->
+    <label for="Image">Employee Image:</label>
+    <input type="file" name="employee_img" accept="image/*"><br>
+
+    <input type="submit" name="submit" value="Add Employee">
+</form>
+
     </form> 
 </body>
 </html>
