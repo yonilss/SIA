@@ -1,0 +1,188 @@
+/* General body styling with black background and gradient fade effect */
+body {
+    margin: 0;
+    padding: 0;
+    color: white; /* Text color changed to white */
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Full height of the viewport */
+    display: flex;
+    overflow: hidden; /* Prevents scrolling on body */
+}
+
+/* Ensure full height for gradient */
+html, body {
+    height: 100%;
+}
+
+/* Background gradient */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(34, 34, 34, 0.8) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(20, 20, 20, 0.8) 100%); /* Dark gradient background */
+    z-index: -1; /* Send it behind the content */
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    height: 100vh; /* Full height of the viewport */
+    background-color: rgba(51, 51, 51, 0.9); /* Semi-transparent sidebar for effect */
+    padding: 20px;
+    position: fixed; /* Fixed sidebar */
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Links inside the sidebar */
+.sidebar a {
+    color: white; /* Link color changed to white */
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border: 2px solid transparent; /* Border color changed to transparent initially */
+    margin-bottom: 10px; /* Space between links */
+    text-align: center; /* Center align text */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transition for background and border */
+}
+
+/* Hover effect for links */
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+    border-color: white; /* White border on hover */
+}
+
+/* Main content styling */
+.content {
+    margin-left: 270px; /* Space for the sidebar */
+    padding: 20px;
+    width: calc(100% - 270px); /* Adjust width to account for sidebar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    overflow: auto; /* Allow scrolling if content overflows */
+}
+
+/* Employee container styling */
+.employee-container {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(3, 1fr); /* Create 3 equal columns */
+    gap: 16px; /* Space between cards */
+    margin: 20px auto; /* Center the container */
+    max-width: 1000px; /* Decrease the maximum width for a slightly smaller layout */
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px) {
+    .employee-container {
+        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 500px) {
+    .employee-container {
+        grid-template-columns: 1fr; /* Change to 1 column on very small screens */
+    }
+}
+
+/* Employee card styling */
+.employee-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px; /* Reduced padding for a smaller card */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.2s; /* Add a hover effect for better visual feedback */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent card background */
+}
+
+.employee-card:hover {
+    transform: scale(1.05); /* Scale the card a bit when hovered */
+}
+
+/* Employee image styling */
+.employee-img {
+    width: 100%; /* Make sure the image fills the card width */
+    height: 200px; /* Reduced height for all images */
+    object-fit: cover; /* Crop the image if necessary while maintaining aspect ratio */
+    border-radius: 8px; /* Optional: If you want rounded corners */
+}
+
+/* Employee details styling */
+.employee-details h2 {
+    font-size: 1.4em; /* Reduced font size for the title */
+    margin: 6px 0; /* Reduced margin */
+}
+
+.employee-details p {
+    font-size: 0.9em; /* Reduced font size for other text */
+    margin: 4px 0;
+}
+
+/* Button styling */
+.edit-btn, .delete-btn {
+    padding: 6px 10px; /* Smaller padding for buttons */
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF; /* Edit button color */
+    border-radius: 4px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.delete-btn {
+    background-color: #DC3545; /* Delete button color */
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    opacity: 0.8;
+}
+
+/* Table styling */
+table {
+    width: 80%;
+    margin: 20px auto; /* Center horizontally */
+    border-collapse: collapse;
+    background-color: rgba(34, 34, 34, 0.9); /* Slightly transparent background for the table */
+    color: white;
+}
+
+table th, table td {
+    border: 1px solid white;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #444;
+}
+
+table tr:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light hover effect on rows */
+}
+
+/* Add New Employee button styling */
+.add-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}
+
+.Addbutton, h2 {
+    text-align: center;
+}

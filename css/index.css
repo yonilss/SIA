@@ -1,0 +1,95 @@
+/* General body styling with blue fading background */
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e0f7fa 0%, #42a5f5 50%, #1565c0 100%); /* Blue gradient background */
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centered container for login form */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login form styling with Bootstrap form classes */
+form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 400px;
+    text-align: center;
+}
+
+/* Company logo placeholder */
+.logo {
+    width: 100px;
+    height: 100px;
+    background-color: #333; /* Placeholder background */
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+}
+
+/* Form heading with Bootstrap typography */
+h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #42a5f5; /* Changed to a blue to match theme */
+    font-weight: 700;
+}
+
+/* Form labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Input fields with Bootstrap input classes */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 93%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Submit button with Bootstrap button styles */
+input[type="submit"] {
+    width: 100%;
+    background-color: #42a5f5; /* Changed to blue */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #1565c0; /* Darker blue on hover */
+}
+
+/* Footer styling */
+.footer {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #777;
+}

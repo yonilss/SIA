@@ -15,12 +15,13 @@ login($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css/stylesEmployee.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <h2>Login</h2>
+    
     <!-- The form action points to index.php so the same page handles the login -->
     <form action="index.php" method="POST">
+        <h2>Login</h2>
     <label for="email">Email:</label>
     <input type="text" id="email" name="email" required><br><br>
     

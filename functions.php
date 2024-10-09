@@ -72,7 +72,7 @@ function addEmployee($conn){
             $result = mysqli_query($conn, $query);
             if ($result) {
                 echo "Employee added successfully!";
-                header("Location: http://localhost/PHP/SIA/employee.php");
+                header("Location: employee.php");
 
             } else {
                 echo "Error: " . mysqli_error($conn);
@@ -142,7 +142,7 @@ function delEmployee($conn){
     $result = mysqli_query($conn, "DELETE FROM employee WHERE id = $id");
 
     if ($result) {
-    header("Location: http://localhost/PHP/SIA/employee.php");
+    header("Location: employee.php");
     exit();
         } else {
     echo "Error: " . mysqli_error($conn);
