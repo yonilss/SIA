@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+html, body {
+    height: 100%;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(94, 143, 157), rgb(43, 43, 98));
+    z-index: -1;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(58, 74, 97, 0.9);
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.content {
+    margin-left: 270px;
+    padding: 20px;
+    width: calc(100% - 270px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow: auto;
+    position: relative;
+}
+
+/* Style for the image in the sidebar */
+.sidebar img {
+    border-radius: 10px; /* Add rounded corners to sidebar images */
+}   
+
+/* Employee form styling */
+.employee-form {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column; /* Stack form elements */
+}
+
+/* Form group styling */
+.form-group {
+    display: flex; /* Use flexbox */
+    margin-bottom: 15px; /* Space between groups */
+}
+
+/* Individual form field styling */
+.form-field {
+    flex: 1; /* Distribute available space equally */
+    margin-right: 10px; /* Space between fields */
+}
+
+/* Adjust the last field in the row */
+.form-field:last-child {
+    margin-right: 0; /* Remove margin for the last field */
+}
+
+/* Label styling */
+.employee-form label {
+    margin-bottom: 5px; /* Space above labels */
+    font-weight: bold; /* Bold labels */
+    color: #333; /* Darker color for labels */
+    display: block; /* Ensure labels take full width */
+    font-size: 16px; /* Font size for labels */
+}
+
+/* Input field styling */
+.employee-form input[type="text"],
+.employee-form input[type="number"],
+.employee-form input[type="email"],
+.employee-form textarea {
+    width: 100%; /* Full width inputs */
+    padding: 12px; /* Padding for input fields */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners for inputs */
+    font-size: 16px; /* Font size */
+    transition: border-color 0.3s; /* Smooth transition for focus */
+}
+
+/* Textarea styling */
+.employee-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    height: 100px; /* Default height */
+}
+
+/* Employee image input styling */
+.employee-form input[type="file"] {
+    width: 100%; /* Full width for the file input */
+    padding: 12px; /* Padding for better spacing */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor for better UX */
+    transition: border-color 0.3s; /* Smooth transition for focus */
+    background: rgb(169, 182, 184); /* Background color */
+}
+
+/* Change border color on focus */
+.employee-form input[type="file"]:focus {
+    border-color: #42a5f5; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Styling for the file input when a file is selected */
+.employee-form input[type="file"]::file-selector-button {
+    background: #ffffff; /* Button background color */
+    color: rgb(55, 54, 54); /* Text color */
+    padding: 10px 20px; /* Button padding */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Font size */
+}
+
+/* Change button background color on hover */
+.employee-form input[type="file"]::file-selector-button:hover {
+    background: #607171; /* Darker shade on hover */
+}
+
+
+/* Submit button styling */
+.submit-btn {
+    background-color: #607171; /* Green background */
+    color: white;
+    padding: 12px 20px; /* Larger padding */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform effect */
+}
+
+.submit-btn:hover {
+    background-color: #607171; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+
+

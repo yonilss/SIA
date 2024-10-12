@@ -19,7 +19,7 @@ $result = mysqli_query($conn, "SELECT * FROM employee ORDER BY Employee_ID ASC")
     <!-- Sidebar -->
     <div class="sidebar">
         <img src="img/EMSLOGO.png" alt="Logo" style="width: 100%; height: auto; margin-bottom: 20px;">
-        <a href="homepage.php">Home</a>
+        <a href="home.php">Home</a>
         <a href="employee.php">Employees</a>
         <a href="#">Attendance</a>
         <a href="#">Reports</a>
@@ -28,7 +28,7 @@ $result = mysqli_query($conn, "SELECT * FROM employee ORDER BY Employee_ID ASC")
 
     <!-- Main content -->
     <div class="content">
-        <h2>Employee List</h2>
+        <h2>EMPLOYEE LIST</h2>
 
         <div class="employee-container">
             <?php

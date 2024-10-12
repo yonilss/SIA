@@ -33,7 +33,7 @@ function login($conn){
                 // Simple comparison (not hashed)
                 if ($password === $user['Password']) {
                     $_SESSION['email'] = $user['Email'];
-                    header('Location: homepage.php');
+                    header('Location: home.php');
                     exit;
                 } else {
                     echo "Invalid password.";
@@ -128,7 +128,7 @@ function editEmployee($conn){
     
             if ($result) {
                 echo "<p><font color='green'>Data updated successfully!</font></p>";
-                echo "<a href='homepage.php'>View Result</a>";
+                echo "<a href='home.php'>View Result</a>";
             } else {
                 echo "<p><font color='red'>Error updating data: " . mysqli_error($conn) . "</font></p>";
             }

@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #e0f7fa 0%, #42a5f5 50%, #1565c0 100%); /* Blue gradient background */
+    background: linear-gradient(rgb(94, 143, 157), rgb(43, 43, 98));
     color: #333;
     font-family: 'Roboto', sans-serif;
     height: 100vh;
@@ -73,7 +73,7 @@ input[type="email"] {
 /* Submit button with Bootstrap button styles */
 input[type="submit"] {
     width: 100%;
-    background-color: #42a5f5; /* Changed to blue */
+    background-color: #1565c0;
     color: white;
     padding: 12px;
     border: none;
@@ -84,7 +84,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #1565c0; /* Darker blue on hover */
+    background-color: #237bdf; /* Darker blue on hover */
 }
 
 /* Footer styling */

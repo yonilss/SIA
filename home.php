@@ -2,7 +2,7 @@
 // Include the database connection file
 require_once("dbConnection.php");
 
-// Fetch data in descending order (latest entry first)
+// Fetch data in ascending order based on Employee ID
 $result = mysqli_query($conn, "SELECT * FROM employee ORDER BY Employee_ID ASC");
 ?>
 <!DOCTYPE html>
@@ -11,13 +11,14 @@ $result = mysqli_query($conn, "SELECT * FROM employee ORDER BY Employee_ID ASC")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="css/homepage.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 
+<!-- Sidebar -->
 <div class="sidebar">
     <img src="img/EMSLOGO.png" alt="Logo" style="width: 100%; height: auto; margin-bottom: 20px;">
-    <a href="homepage.php">Home</a>
+    <a href="home.php">Home</a>
     <a href="employee.php">Employees</a>
     <a href="#">Attendance</a>
     <a href="#">Reports</a>
@@ -26,10 +27,10 @@ $result = mysqli_query($conn, "SELECT * FROM employee ORDER BY Employee_ID ASC")
 
 <!-- Main content -->
 <div class="content">
-    <h2>Welcome to Employ Employee</h2>
-    <h3><p>Here you can manage your employees efficiently.</p></h3>
-</div>
-
+    <h2>Welcome to Employee Management System</h2>
+    <h3>Here you can manage your employees efficiently.</h3>
+    
+</div> <!-- content -->
 
 </body>
 </html>
