@@ -41,7 +41,7 @@ if ($id > 0) {
 </head>
 <body>
     <div class="sidebar">
-        <img src="img/EMSLOGO.png" alt="Logo" style="width: 100%; height: auto; margin-bottom: 20px;">
+        <img src="img/LOGO.png" alt="Logo" style="width: 100%; height: auto; margin-bottom: 20px;">
         <a href="home.php">Home</a>
         <a href="employee.php">Employees</a>
         <a href="#">Attendance</a>
